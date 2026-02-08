@@ -12,6 +12,8 @@ body{
 .titre{
     font-family: 'Tilt Warp', sans-serif;
     color: #ECECEC;
+    font-size: 96px;
+    text-decoration: none;
 }
 .sous-titre{
     font-family: 'Josefin Sans', sans-serif;

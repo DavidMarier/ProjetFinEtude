@@ -1,0 +1,37 @@
+#accueil{
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    display: flex;
+    margin: 10rem;
+}
+
+#genese{
+    flex-direction: row-reverse;
+}
+
+/*Titres*/
+
+.titre{
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.titre:hover{
+    text-shadow: 0px 0px 10px currentColor;
+}
+
+/*Formes SVG*/
+
+.forme {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* derrière le texte */
+    pointer-events: none; /* éviter que le SVG bloque le clic */
+}
