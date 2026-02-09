@@ -23,3 +23,12 @@ document.querySelectorAll('.titre').forEach(el => {
 
     animerTitre();
 });
+
+// Appliquer les offsets à chaque forme secondaire
+document.querySelectorAll('.forme.secondaire').forEach(svg => {
+    const offsetX = svg.dataset.offsetX || 0;
+    const offsetY = svg.dataset.offsetY || 0;
+    svg.style.setProperty('--offset-x', `${offsetX}px`);
+    svg.style.setProperty('--offset-y', `${offsetY}px`);
+});
+

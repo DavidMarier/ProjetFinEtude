@@ -17,21 +17,74 @@ span{
 .titre{
     position: relative;
     display: inline-block;
-    z-index: 1;
     text-decoration: none;
+    z-index: 1;
 }
 
 .titre:hover{
     text-shadow: 0px 0px 10px currentColor;
 }
 
-/*Formes SVG*/
+/*Formes*/
 
-.forme {
+.forme{
     position: absolute;
     top: 50%;
     left: 50%;
+    pointer-events: none;
+}
+
+/*forme principale*/
+.principale{
     transform: translate(-50%, -50%);
-    z-index: -1; /* derrière le texte */
-    pointer-events: none; /* éviter que le SVG bloque le clic */
+    z-index: -1;
+}
+
+/* formes secondaires*/
+.secondaire{
+    /* ajout des offsets variables */
+    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(0.96);
+    z-index: -2;
+    opacity: 1;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.6s ease;
+}
+
+.secondaire *{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+
+    transition: stroke-dashoffset 0.8s ease;
+}
+
+.titre:hover .secondaire{
+    /* conserve le centrage + offset */
+    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(1);
+    animation: drift 6s ease-in-out infinite;
+}
+
+.titre:hover .secondaire *{
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.8s ease;
+}
+
+/* Drift keyframes avec offsets */
+@keyframes drift {
+    0% {
+        transform: translate(-50%, -50%) translate(var(--offset-x), var(--offset-y));
+    }
+    25% {
+        transform: translate(-50%, -50%) translate(calc(var(--offset-x) + 4px), calc(var(--offset-y) - 3px));
+    }
+    50% {
+        transform: translate(-50%, -50%) translate(calc(var(--offset-x) - 3px), calc(var(--offset-y) + 4px));
+    }
+    75% {
+        transform: translate(-50%, -50%) translate(calc(var(--offset-x) + 2px), calc(var(--offset-y) + 3px));
+    }
+    100% {
+        transform: translate(-50%, -50%) translate(var(--offset-x), var(--offset-y));
+    }
 }
