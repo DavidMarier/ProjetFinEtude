@@ -5,7 +5,7 @@
 
 span{
     display: flex;
-    margin: 10rem;
+    margin: 15rem;
 }
 
 #genese{
@@ -36,16 +36,14 @@ span{
 
 /*forme principale*/
 .principale{
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(2);
     z-index: -1;
 }
 
 /* formes secondaires*/
 .secondaire{
-    /* ajout des offsets variables */
-    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(0.96);
+    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(1.96);
     z-index: -2;
-    opacity: 1;
 
     transition:
         opacity 0.4s ease,
@@ -60,8 +58,7 @@ span{
 }
 
 .titre:hover .secondaire{
-    /* conserve le centrage + offset */
-    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(1);
+    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(1.96);
     animation: drift 6s ease-in-out infinite;
 }
 
@@ -70,21 +67,31 @@ span{
     transition: stroke-dashoffset 0.8s ease;
 }
 
-/* Drift keyframes avec offsets */
+/* Drift avec offsets */
 @keyframes drift {
     0% {
-        transform: translate(-50%, -50%) translate(var(--offset-x), var(--offset-y));
+        transform: translate(-50%, -50%)
+                   translate(var(--offset-x), var(--offset-y))
+                   scale(1.96);
     }
     25% {
-        transform: translate(-50%, -50%) translate(calc(var(--offset-x) + 4px), calc(var(--offset-y) - 3px));
+        transform: translate(-50%, -50%)
+                   translate(calc(var(--offset-x) + 4px), calc(var(--offset-y) - 3px))
+                   scale(1.96);
     }
     50% {
-        transform: translate(-50%, -50%) translate(calc(var(--offset-x) - 3px), calc(var(--offset-y) + 4px));
+        transform: translate(-50%, -50%)
+                   translate(calc(var(--offset-x) - 3px), calc(var(--offset-y) + 4px))
+                   scale(1.96);
     }
     75% {
-        transform: translate(-50%, -50%) translate(calc(var(--offset-x) + 2px), calc(var(--offset-y) + 3px));
+        transform: translate(-50%, -50%)
+                   translate(calc(var(--offset-x) + 2px), calc(var(--offset-y) + 3px))
+                   scale(1.96);
     }
     100% {
-        transform: translate(-50%, -50%) translate(var(--offset-x), var(--offset-y));
+        transform: translate(-50%, -50%)
+                   translate(var(--offset-x), var(--offset-y))
+                   scale(1.96);
     }
 }

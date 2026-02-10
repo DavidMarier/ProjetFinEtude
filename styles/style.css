@@ -18,8 +18,10 @@ body{
 .sous-titre{
     font-family: 'Josefin Sans', sans-serif;
     color: #ECECEC;
+    font-size: 64px;
 }
 p{
     font-family: 'Josefin Sans', sans-serif;
     color: #ECECEC;
+    font-size: 40px;
 }
