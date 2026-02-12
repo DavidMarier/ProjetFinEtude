@@ -7,11 +7,11 @@ document.querySelectorAll('.titre').forEach(el => {
     function animerTitre() {
         temps += 0.01;
 
-        vel.x += Math.sin(temps) * 0.002;
-        vel.y += Math.cos(temps * 0.8) * 0.002;
+        vel.x += Math.sin(temps) * 0.0025;
+        vel.y += Math.cos(temps * 0.8) * 0.0025;
 
-        vel.x *= 0.98;
-        vel.y *= 0.98;
+        vel.x *= 0.97;
+        vel.y *= 0.97;
 
         pos.x += vel.x;
         pos.y += vel.y;
