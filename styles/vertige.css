@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    position: relative;
+    display: flex;
+    column-gap: 33vw;
+    margin-top: 50px;
+}
+
+.titre{
+    position: relative;
+    margin: 50px;
+}
+.sous-titre{
+    align-self: center;
+}
+
+#court-metrage{
+    align-self: center;
+}
+#credit{
+    
+}

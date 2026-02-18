@@ -1,15 +1,28 @@
+body{
+    overflow-x: hidden;
+}
+
 #accueil{
     display: flex;
     flex-direction: column;
 }
 
 span{
+    position: absolute;
     display: flex;
-    margin: 15rem;
 }
 
+#synopsis{
+    top: 15%;
+    left: 10%;
+}
 #genese{
-    flex-direction: row-reverse;
+    top: 45%;
+    right: 10%;
+}
+#vertige{
+    top: 60%;
+    left: 37%;
 }
 
 /*Titres*/
@@ -36,13 +49,13 @@ span{
 
 /*forme principale*/
 .principale{
-    transform: translate(-50%, -50%) scale(2);
+    transform: translate(-50%, -50%) scale(1.75);
     z-index: -1;
 }
 
 /* formes secondaires*/
 .secondaire{
-    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(1.96);
+    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(1.5);
     z-index: -2;
 
     transition:
@@ -58,7 +71,7 @@ span{
 }
 
 .titre:hover .secondaire{
-    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(1.96);
+    transform: translate(-50%, -50%) translate(var(--offset-x, 0), var(--offset-y, 0)) scale(1.5);
     animation: drift 6s ease-in-out infinite;
 }
 
@@ -72,26 +85,26 @@ span{
     0% {
         transform: translate(-50%, -50%)
                    translate(var(--offset-x), var(--offset-y))
-                   scale(1.96);
+                   scale(1.5);
     }
     25% {
         transform: translate(-50%, -50%)
                    translate(calc(var(--offset-x) + 4px), calc(var(--offset-y) - 3px))
-                   scale(1.96);
+                   scale(1.5);
     }
     50% {
         transform: translate(-50%, -50%)
                    translate(calc(var(--offset-x) - 3px), calc(var(--offset-y) + 4px))
-                   scale(1.96);
+                   scale(1.5);
     }
     75% {
         transform: translate(-50%, -50%)
                    translate(calc(var(--offset-x) + 2px), calc(var(--offset-y) + 3px))
-                   scale(1.96);
+                   scale(1.5);
     }
     100% {
         transform: translate(-50%, -50%)
                    translate(var(--offset-x), var(--offset-y))
-                   scale(1.96);
+                   scale(1.5);
     }
 }
