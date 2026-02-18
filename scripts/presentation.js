@@ -23,6 +23,7 @@ function gestionCollisions(){
     }
 }
 
+gestionCollisions();
 // Gestion personnage
 
 let deplacementActif = false;
@@ -32,6 +33,7 @@ function deplace(){
         deplacementActif = true;
         personnage.classList.add('actif');
         e.preventDefault();
+        console.log(deplacementActif);
     });
 
     document.addEventListener('mousemove', (e) => {
@@ -48,6 +50,9 @@ function deplace(){
         }
     });
 }
+
+setInterval(deplace, 1000/60);
+
 
 // Générer des nuages
 
