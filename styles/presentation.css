@@ -79,6 +79,10 @@
     background-color: #fff;
     transform-origin: center center;
 }
+#personnage:hover{
+    cursor: grab;
+}
+
 #oeil-g{
     margin-top: 15px;
     width: 20px;
@@ -92,4 +96,38 @@
     height: 20px;
     border-radius: 50%;
     background-color: black;
+}
+
+/*Introduction*/
+
+#intro{
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 100;
+    pointer-events: none;
+}
+
+#titre-intro{
+    margin-top: 80px;
+    font-family: "Tilt Warp", sans-serif;
+    font-size: 8rem;
+    color: white;
+    text-shadow: black 0px 0px 20px;
+    text-decoration: none;
+    opacity: 0;
+
+    --deplacementY: -100px;
+
+    scale: 1;
+    pointer-events: auto;
+    transition: scale 300ms ease, text-shadow 300ms ease;
+}
+
+#titre-intro:hover{
+    scale: 1.25;
+    text-shadow: white 0px 0px 40px;
 }
