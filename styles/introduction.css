@@ -10,7 +10,8 @@
     height: 100vh;
     display: flex;
     flex-direction: column-reverse;
-    background-color: #8b8b8b;    
+    background-color: #8b8b8b; 
+    transition: transform 0.005s;   
 }
 
 #sol{
@@ -118,6 +119,7 @@
     color: white;
     text-shadow: black 0px 0px 20px;
     text-decoration: none;
+    cursor: pointer;
     opacity: 0;
 
     --deplacementY: -100px;
@@ -130,4 +132,28 @@
 #titre-intro:hover{
     scale: 1.25;
     text-shadow: white 0px 0px 40px;
+}
+
+
+/*Animation*/
+@keyframes shake {
+    from, to{ 
+        transform: translate(0, 0); 
+    }
+    20%{ 
+        transform: translate(-10px, 5px); 
+    }
+    40%{ 
+        transform: translate(6px, -10px); 
+    }
+    60%{ 
+        transform: translate(-7px, -3px); 
+    }
+    80%{ 
+        transform: translate(10px, 6px); 
+    }
+}
+
+.shake {
+    animation: shake 2s;
 }
