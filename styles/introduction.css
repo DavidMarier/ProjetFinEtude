@@ -134,26 +134,57 @@
     text-shadow: white 0px 0px 40px;
 }
 
+/* Overlay final */
 
-/*Animation*/
-@keyframes shake {
-    from, to{ 
-        transform: translate(0, 0); 
-    }
-    20%{ 
-        transform: translate(-10px, 5px); 
-    }
-    40%{ 
-        transform: translate(6px, -10px); 
-    }
-    60%{ 
-        transform: translate(-7px, -3px); 
-    }
-    80%{ 
-        transform: translate(10px, 6px); 
-    }
+#overlay-final{
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    z-index: 9999;
 }
 
-.shake {
-    animation: shake 2s;
+/* Losange */
+.forme-svg{
+    width: 160px;
+    opacity: 0;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* Formes CSS */
+.forme{
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+#overlay-final.visible .forme,
+#overlay-final.visible .forme-svg{
+    opacity: 1;
+    transform: scale(1);
+}
+
+#overlay-final.fade-out-formes .forme,
+#overlay-final.fade-out-formes .forme-svg{
+    opacity: 0;
+    transform: scale(0.3);
+}
+
+/* Cercle rouge */
+.cercle{
+    background: red;
+    border-radius: 50%;
+}
+
+/* Triangle bleu */
+.triangle{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid blue;
 }

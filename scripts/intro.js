@@ -3,8 +3,9 @@ const titreIntro = document.querySelector("#titre-intro");
 
 let debut = null;
 
-const dureeFondu = 3000;   // durée du fondu
-const dureeAnimationTitre = 1500; // durée animation du titre
+const dureeFondu = 3000;  
+const dureeAnimationTitre = 1500; 
+const dureeShake = 3000;  
 
 function animer(tempsActuel) {
 
@@ -27,35 +28,78 @@ function animer(tempsActuel) {
     } 
 }
 
-requestAnimationFrame(animer);
+titreIntro.addEventListener("click", () => {
 
-// document.body{
-//     let pos = { x: 0, y: 0 };
-//     let vel = { x: 0, y: 0 };
+    const start = Date.now();
+    const intervale = 30;
+    const maxX = 6;
+    const maxY = 6;
+    const maxR = 2;
 
-//     let temps = Math.random() * 1000;
+    const shaker = setInterval(() => {
 
-//     function shake() {
-//         temps += 0.01;
+        const ecoule = Date.now() - start;
 
-//         vel.x += Math.sin(temps) * 2;
-//         vel.y += Math.cos(temps * 0.8) * 2;
+        if (ecoule >= dureeShake) {
+            clearInterval(shaker);
+            document.body.style.transform = "";
+            lancerSequenceFinale();
+            return;
+        }
 
-//         vel.x *= 0.97;
-//         vel.y *= 0.97;
+        const x = (Math.random() * 2 - 1) * maxX;
+        const y = (Math.random() * 2 - 1) * maxY;
+        const r = (Math.random() * 2 - 1) * maxR;
 
-//         pos.x += vel.x;
-//         pos.y += vel.y;
+        document.body.style.transform = 
+            `translate(${x}px, ${y}px) rotate(${r}deg)`;
 
-//         requestAnimationFrame(shake);
-//     }
-// };
+    }, intervale);
 
-// titreIntro.addEventListener("click", ()=>{
-//     shake();
-//     setTimeout(()=>{location.href="accueil.html"}, 3000);
-// });
+});
 
-function quake() {
-    document.body.classList.add("shake");
+
+function lancerSequenceFinale(){
+
+    const overlay = document.createElement("div");
+    overlay.id = "overlay-final";
+    document.body.appendChild(overlay);
+
+    /* ===== LOSANGE SVG ===== */
+    const losange = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    losange.setAttribute("viewBox", "0 0 300 200");
+    losange.setAttribute("class", "forme-svg");
+
+    const polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+    polygon.setAttribute("points", "150,0 300,100 150,200 0,100");
+    polygon.setAttribute("fill", "yellow");
+
+    losange.appendChild(polygon);
+
+    /* ===== CERCLE ===== */
+    const cercle = document.createElement("div");
+    cercle.className = "forme cercle";
+
+    /* ===== TRIANGLE ===== */
+    const triangle = document.createElement("div");
+    triangle.className = "forme triangle";
+
+    overlay.appendChild(losange);
+    overlay.appendChild(cercle);
+    overlay.appendChild(triangle);
+
+    requestAnimationFrame(()=>{
+        overlay.classList.add("visible");
+    });
+
+    setTimeout(()=>{
+        overlay.classList.add("fade-out-formes");
+
+        setTimeout(()=>{
+            location.href = "accueil.html";
+        },1000);
+
+    },5000);
 }
+
+requestAnimationFrame(animer);
