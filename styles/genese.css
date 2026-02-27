@@ -24,3 +24,22 @@
         transform: scale(0.95);
     }
 }
+
+
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 2rem; /* espace entre les figures */
+    justify-items: center;
+    align-items: start;   
+    margin: 2rem 0;
+}
+
+.galerie figure {
+    max-width: 300px; /* limite la taille */
+    display: flex;
+    flex-direction: column;
+}
+.galerie figure img {
+    width: 200%;
+}
