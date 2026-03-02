@@ -1,3 +1,10 @@
+.titre{
+    margin: 50px;
+}
+h2{
+    margin: 50px;
+}
+
 .cercle{
     position: absolute;
     z-index: -1;
@@ -41,9 +48,9 @@
 .galerie figure {
     max-width: 400px;
     display: flex;
+    position: relative;
     flex-direction: column;
-    /* overflow: hidden; */
-    text-align: center;
+    gap: 1rem;
 }
 
 .galerie figure img {
