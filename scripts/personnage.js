@@ -38,7 +38,11 @@ let sourisY = posY + personnage.offsetHeight / 2;
 
 
 // Gestion des collisions
-
+/**
+ * 
+ * 
+ * 
+ */
 function gestionCollisions() {
 
     const sol = hauteurZone - personnage.offsetHeight;

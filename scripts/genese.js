@@ -1,7 +1,7 @@
 const images = document.querySelectorAll(".galerie img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.querySelector(".lightbox-img");
-const closeBtn = document.querySelector(".close");
+const btnFerme = document.querySelector(".close");
 
 images.forEach(img => {
     img.addEventListener("click", () => {
@@ -10,18 +10,12 @@ images.forEach(img => {
     });
 });
 
-closeBtn.addEventListener("click", () => {
+btnFerme.addEventListener("click", () => {
     lightbox.classList.remove("active");
 });
 
 lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-        lightbox.classList.remove("active");
-    }
-});
-
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
+    if (e.target == lightbox) {
         lightbox.classList.remove("active");
     }
 });
