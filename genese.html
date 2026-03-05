@@ -73,11 +73,6 @@
         <img src="./images/FlStudio/ReeseBass.png" alt="Bass">
         <audio controls src="./son/reesebass.mp3"></audio>
     </figure>
-
-    <figure class="full-width">
-        <figcaption class="sous-titre">vertige.mp3</figcaption>
-        <audio controls src="./son/vertige.mp3"></audio>
-    </figure>
 </div>
 
 <h2 class="sous-titre">JavaScript</h2>
@@ -85,22 +80,22 @@
 <div class="galerie">
     <figure>
         <figcaption class="sous-titre">Collisions</figcaption>
-        <img src="./images/FlStudio/FlMixer.png" alt="Collisions">
+        <img src="./images/Programmation/JSCollisions.png" alt="Collisions">
     </figure>
 
     <figure>
         <figcaption class="sous-titre">Nuages</figcaption>
-        <img src="./images/FlStudio/FlPlaylist.png" alt="Nuages">
+        <img src="./images/Programmation/JSNuages.png" alt="Nuages">
     </figure>
 
     <figure>
         <figcaption class="sous-titre">Flottement</figcaption>
-        <img src="./images/FlStudio/Pad.png" alt="Flottement">
+        <img src="./images/Programmation/JSFlottement.png" alt="Flottement">
     </figure>
 
     <figure>
         <figcaption class="sous-titre">Lightbox</figcaption>
-        <img src="./images/FlStudio/ReeseBass.png" alt="Lightbox">
+        <img src="./images/Programmation/JSlightbox.png" alt="Lightbox">
     </figure>
 </div>
 
@@ -133,13 +128,43 @@
         <circle class="masque-cercle" cx="130" cy="130" r="120" fill="#0D0D0D"/>
     </svg>
 
-    <svg class="forme principale" width="200" height="200" viewBox="-4 -4 208 208">
-                <polygon points="100,0 0,200 200,200"
-                         fill="none" stroke="#3a86ff" stroke-width="6"/>
-    </svg>
+    <h1 class="titre">La Chute</h1>
 
-    <h2 class="sous-titre">La Chute</h2>
-    <a class="titre" href="vertige.html">VERTIGE</a>
+    <div id="chute">
+
+        <svg id="triangle" width="200" height="200" viewBox="-5 -5 210 210">
+
+            <defs>
+                <!-- forme du triangle pour limiter la jauge -->
+                <clipPath id="clipTriangle">
+                    <polygon points="100,0 0,200 200,200"></polygon>
+                </clipPath>
+            </defs>
+
+            <!-- jauge -->
+            <rect 
+                class="jauge"
+                x="0"
+                y="200"
+                width="200"
+                height="200"
+                fill="#3a86ff"
+                clip-path="url(#clipTriangle)">
+            </rect>
+
+            <!-- contour du triangle -->
+            <polygon
+                points="100,0 0,200 200,200"
+                fill="none"
+                stroke="#3a86ff"
+                stroke-width="6">
+            </polygon>
+
+        </svg>
+
+        <a class="titre" href="vertige.html">VERTIGE</a>
+
+    </div>
 </body>
 
 <script src="./scripts/genese.js"></script>

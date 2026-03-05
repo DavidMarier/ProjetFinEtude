@@ -125,3 +125,39 @@ p{
     color: white;
     cursor: pointer;
 }
+
+/*La Chute*/
+
+#chute {
+    margin-top: 200%;
+    display: grid;
+    place-items: center;
+}
+
+#triangle {
+    z-index: -2;
+    grid-area: 1/1;
+    transform: scale(2);
+}
+
+#chute a {
+    grid-area: 1/1;
+}
+
+.jauge{
+    transition: y 0.8s cubic-bezier(.65,0,.35,1);
+}
+
+#chute:hover .jauge{
+    y: 0;
+}
+
+.remplissage{
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform 0.8s cubic-bezier(.65,0,.35,1);
+}
+
+#chute:hover .remplissage{
+    transform: scaleY(1);
+}
