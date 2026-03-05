@@ -37,11 +37,10 @@ let sourisX = posX + personnage.offsetWidth / 2;
 let sourisY = posY + personnage.offsetHeight / 2;
 
 
-// Gestion des collisions
 /**
- * 
- * 
- * 
+ * Gère les collisions du personnage avec les limites de la zone
+ * @param {void}
+ * @returns {void}
  */
 function gestionCollisions() {
 

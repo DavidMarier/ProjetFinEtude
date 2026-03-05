@@ -1,3 +1,8 @@
+/**
+ * Anime chaque élément ayant la classe "titre" en appliquant un mouvement flottant
+ * @param {void}
+ * @returns {void}
+ */
 // Sélection de tous les éléments avec la classe "titre"
 document.querySelectorAll('.titre').forEach(el => {
 

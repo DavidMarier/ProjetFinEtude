@@ -7,6 +7,11 @@ const NOMBRE_NUAGES = 20;
 // Tableau qui stocke tous les nuages créés
 const listeNuages = [];
 
+/**
+ * Crée un nuage avec des dimensions, une opacité et une vitesse aléatoires
+ * @param {void}
+ * @returns {{element: HTMLDivElement, positionX: number, vitesse: number, largeur: number}}
+ */
 function creerNuage() {
     // Création d’un élément div pour représenter un nuage
     const elementNuage = document.createElement("div");
