@@ -11,6 +11,9 @@ h2{
 p{
     margin: 50px;
 }
+.section{
+    margin-top: 200px;
+}
 
 .cercle{
     position: absolute;
@@ -152,12 +155,3 @@ p{
     y: 0;
 }
 
-.remplissage{
-    transform-origin: bottom;
-    transform: scaleY(0);
-    transition: transform 0.8s cubic-bezier(.65,0,.35,1);
-}
-
-#chute:hover .remplissage{
-    transform: scaleY(1);
-}
